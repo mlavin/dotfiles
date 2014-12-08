@@ -1,0 +1,16 @@
+[user]
+name = mlavin
+email = markdlavin@gmail.com
+
+[alias]
+st = status
+
+[core]
+excludesfile = ~/.gitignore
+editor = vim
+
+[push]
+default = current
+
+[color]
+ui = true

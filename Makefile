@@ -1,4 +1,4 @@
-all: terminal tmux
+all: terminal tmux git
 
 terminal:
 	@gconftool --type string --set /apps/gnome-terminal/profiles/Default/custom_command "tmux"
@@ -7,4 +7,8 @@ terminal:
 tmux:
 	@cp tmux.conf $(HOME)/.tmux.conf
 
-.PHONY: terminal tmux
+git:
+	@cp gitconfig $(HOME)/.gitconfig
+	@cp gitignore $(HOME)/.gitignore
+
+.PHONY: terminal tmux git
