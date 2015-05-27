@@ -11,11 +11,12 @@ git:
 	@cp gitconfig $(HOME)/.gitconfig
 	@cp gitignore $(HOME)/.gitignore
 
-zsh: 	
+zsh:
 	@cp zshrc $(HOME)/.zshrc
-
 
 vim:
 	@cp vimrc $(HOME)/.vimrc
+	@mkdir -p $(HOME)/.vim/colors/
+	@cp github.vim $(HOME)/.vim/colors/
 
 .PHONY: terminal tmux git zsh vim
