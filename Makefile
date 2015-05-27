@@ -1,7 +1,7 @@
 all: terminal tmux git zsh vim
 
 terminal:
-	@gconftool --type string --set /apps/gnome-terminal/profiles/Default/custom_command "tmux"
+	@gconftool --type string --set /apps/gnome-terminal/profiles/Default/custom_command "tmux -2"
 	@gconftool --type bool --set /apps/gnome-terminal/profiles/Default/use_custom_command "true"
 
 tmux:
