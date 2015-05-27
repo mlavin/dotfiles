@@ -87,6 +87,7 @@ export DEBEMAIL="markdlavin@gmail.com"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tmux="tmux -2"
 alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 
