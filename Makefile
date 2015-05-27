@@ -1,4 +1,4 @@
-all: terminal tmux git zsh
+all: terminal tmux git zsh vim
 
 terminal:
 	@gconftool --type string --set /apps/gnome-terminal/profiles/Default/custom_command "tmux"
@@ -14,4 +14,8 @@ git:
 zsh: 	
 	@cp zshrc $(HOME)/.zshrc
 
-.PHONY: terminal tmux git zsh
+
+vim:
+	@cp vimrc $(HOME)/.vimrc
+
+.PHONY: terminal tmux git zsh vim
