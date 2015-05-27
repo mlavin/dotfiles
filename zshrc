@@ -74,7 +74,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_DOWNLOAD_CACHE=$HOME/.virtualenvs/.cache
 
 ## Debian packaging ##
 export DEBFULLNAME="Mark Lavin"
