@@ -14,6 +14,7 @@ set ruler
 set relativenumber
 set number
 set hidden
+set colorcolumn=80,100
 
 " This is what files look like
 set encoding=utf8
