@@ -11,7 +11,7 @@ set showmode
 set showcmd
 set title
 set ruler
-set relativenumber
+" set relativenumber
 set number
 set hidden
 set colorcolumn=80,100
@@ -54,9 +54,44 @@ if has("autocmd")
     set nocompatible
 endif
 
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin Installation
+"  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Set up Vundle on first install - Vundle, in turn, installs all other plugins
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" List bundles here
+" ~~~~~~~~~~~~~~~~~
+
+" General
+Plugin 'gmarik/vundle'
+" Theme
+Plugin 'tomasr/molokai'
+" Python
+Plugin 'pfdevilliers/Pretty-Vim-Python'
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+" end of vundle setup
+
 " Syntax highlighting
 syntax enable
 
 " Colorscheme
 set t_Co=256
-colorscheme github
+colorscheme molokai
