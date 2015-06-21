@@ -16,7 +16,5 @@ zsh:
 
 vim:
 	@cp vimrc $(HOME)/.vimrc
-	@mkdir -p $(HOME)/.vim/colors/
-	@cp github.vim $(HOME)/.vim/colors/
 
 .PHONY: terminal tmux git zsh vim
