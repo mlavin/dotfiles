@@ -14,7 +14,13 @@ git:
 zsh:
 	@cp zshrc $(HOME)/.zshrc
 
-vim:
+vim: flake8 jshint
 	@cp vimrc $(HOME)/.vimrc
 
-.PHONY: terminal tmux git zsh vim
+flake8:
+	@cp flake8 $(HOME)/.config/flake8
+
+jshint:
+	@cp jshintrc $(HOME)/.jshintrc
+
+.PHONY: terminal tmux git zsh vim flake8 jshint

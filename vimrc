@@ -75,6 +75,7 @@ call vundle#rc()
 
 " General
 Plugin 'gmarik/vundle'
+Plugin 'scrooloose/syntastic'
 " Theme
 Plugin 'tomasr/molokai'
 " Python
@@ -88,6 +89,16 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 " end of vundle setup
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin Configuration
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Syntastic Configuration
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
 
 " Syntax highlighting
 syntax enable
