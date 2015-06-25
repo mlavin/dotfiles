@@ -54,6 +54,16 @@ if has("autocmd")
     set nocompatible
 endif
 
+" Files to ignore
+" Python
+set wildignore+=*.pyc,*.pyo,*/__pycache__/*
+" Erlang
+set wildignore+=*.beam
+" Temp files
+set wildignore+=*.swp,~*
+" Archives
+set wildignore+=*.zip,*.tar
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Installation
 "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,6 +86,7 @@ call vundle#rc()
 " General
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 " Python + Theme (molokai)
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 " JavaScript
@@ -87,6 +98,13 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 " end of vundle setup
+
+" Syntax highlighting
+syntax enable
+
+" Colorscheme
+set t_Co=256
+colorscheme molokai
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Configuration
@@ -100,9 +118,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Syntax highlighting
-syntax enable
-
-" Colorscheme
-set t_Co=256
-colorscheme molokai
+" CtrlP
+nnoremap - :CtrlP<cr>
