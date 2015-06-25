@@ -87,6 +87,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 " Python + Theme (molokai)
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 " JavaScript
