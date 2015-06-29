@@ -15,9 +15,10 @@ set ruler
 set number
 set hidden
 set colorcolumn=80,100
+set laststatus=2
 
 " This is what files look like
-set encoding=utf8
+set encoding=utf-8
 set ffs=unix,dos,mac
 
 " From whence you came, you shall remain, until you set, the path again
@@ -122,3 +123,4 @@ let g:syntastic_check_on_wq = 0
 
 " CtrlP
 nnoremap - :CtrlP<cr>
+
