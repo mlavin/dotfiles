@@ -14,6 +14,17 @@ git:
 zsh:
 	@cp zshrc $(HOME)/.zshrc
 
+fonts: $(HOME)/.fonts/PowerlineSymbols.otf $(HOME)/.config/fontconfig/conf.d/10-powerline-symbols.conf
+	fc-cache -vf ~/.fonts/
+
+$(HOME)/.fonts/PowerlineSymbols.otf:
+	mkdir -p $(HOME)/.fonts/
+	wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O $@
+
+$(HOME)/.config/fontconfig/conf.d/10-powerline-symbols.conf:
+	mkdir -p $(HOME)/.config/fontconfig/conf.d/
+	wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf -O $@
+
 vim: flake8 jshint
 	@cp vimrc $(HOME)/.vimrc
 
