@@ -88,6 +88,7 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
 " Python + Theme (molokai)
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 " JavaScript
