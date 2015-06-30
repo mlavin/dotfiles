@@ -110,6 +110,18 @@ set t_Co=256
 colorscheme molokai
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Color overrides
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+highlight WarnHighlight ctermbg=red guibg=red
+highlight ColorColumn ctermbg=238 guibg=#232728
+
+" Highlight trailing whitspace
+autocmd BufWinEnter * match WarnHighlight /\s\+$/
+autocmd InsertEnter * match WarnHighlight /\s\+\%#\@<!$/
+autocmd InsertLeave * match WarnHighlight /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Configuration
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
