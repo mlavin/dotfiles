@@ -128,6 +128,7 @@ autocmd BufWinLeave * call clearmatches()
 " Syntastic Configuration
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = []
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
