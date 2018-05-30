@@ -75,6 +75,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 ## Debian packaging ##
 export DEBFULLNAME="Mark Lavin"
 export DEBEMAIL="markdlavin@gmail.com"
