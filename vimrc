@@ -65,6 +65,9 @@ set wildignore+=*.swp,~*
 " Archives
 set wildignore+=*.zip,*.tar
 
+" Remap escape
+imap jk <Esc>
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Installation
 "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,14 +89,15 @@ call vundle#rc()
 
 " General
 Plugin 'gmarik/vundle'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 " Python + Theme (molokai)
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 " JavaScript
-Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+" Asynchronous Lint Engine
+Plugin 'dense-analysis/ale'
+
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -121,19 +125,26 @@ autocmd InsertEnter * match WarnHighlight /\s\+\%#\@<!$/
 autocmd InsertLeave * match WarnHighlight /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Different tab/space stops"
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType make setlocal noexpandtab
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Configuration
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-" Syntastic Configuration
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_html_checkers = []
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" CtrlP
-nnoremap - :CtrlP<cr>
-
+" ALE Configuration
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier'],
+\   'javascript': ['prettier', 'eslint'],
+\}
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'javascript': ['prettier', 'eslint'],
+\   'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
