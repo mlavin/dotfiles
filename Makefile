@@ -31,6 +31,9 @@ vim: flake8 jshint
 flake8:
 	@cp flake8 $(HOME)/.config/flake8
 
+isort:
+	@cp isort $(HOME)/.isort.cfg
+
 jshint:
 	@cp jshintrc $(HOME)/.jshintrc
 

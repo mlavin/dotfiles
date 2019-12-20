@@ -129,6 +129,8 @@ autocmd BufWinLeave * call clearmatches()
 autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType make setlocal noexpandtab
 
@@ -141,10 +143,19 @@ let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier'],
+\   'less': ['prettier'],
+\   'python': ['black', 'isort'],
+\   'scss': ['prettier'],
+\   'yaml': ['prettier'],
 \}
 let g:ale_linters = {
-\   'python': ['flake8'],
-\   'javascript': ['prettier', 'eslint'],
 \   'css': ['prettier'],
+\   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier'],
+\   'less': ['prettier'],
+\   'python': ['flake8'],
+\   'scss': ['prettier'],
+\   'yaml': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
