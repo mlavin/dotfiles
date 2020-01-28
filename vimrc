@@ -7,7 +7,6 @@ set showcmd
 set title
 set number
 set hidden
-set colorcolumn=100
 
 " This is what files look like
 set ffs=unix,dos,mac
@@ -35,7 +34,7 @@ set wildignore+=*.swp,~*
 set wildignore+=*.zip,*.tar
 
 " Remap escape
-imap jk <Esc>
+inoremap jk <Esc>
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin Installation
@@ -65,7 +64,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-sensible'
 " Python + Theme (molokai)
-Plugin 'pfdevilliers/Pretty-Vim-Python'
+Plugin 'sentientmachine/Pretty-Vim-Python'
 " JavaScript
 Plugin 'jelera/vim-javascript-syntax'
 " CSS and SCSS
@@ -85,17 +84,9 @@ endif
 set t_Co=256
 colorscheme molokai
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Color overrides
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-highlight WarnHighlight ctermbg=red guibg=red
-highlight ColorColumn ctermbg=238 guibg=#232728
+set colorcolumn=80,100
 
-" Highlight trailing whitspace
-autocmd BufWinEnter * match WarnHighlight /\s\+$/
-autocmd InsertEnter * match WarnHighlight /\s\+\%#\@<!$/
-autocmd InsertLeave * match WarnHighlight /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+highlight ColorColumn ctermbg=238 guibg=#232728
 
 " Tab sanity
 set expandtab
