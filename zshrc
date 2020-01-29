@@ -71,6 +71,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
